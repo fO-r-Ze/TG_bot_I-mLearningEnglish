@@ -134,17 +134,17 @@ def insert_data(data):
             print(f'Ошибка {e}')
 
 # Создаем user и наполняем персональную базу стандартным набором слов
-def add_user(cid, user_name = None):
+def add_user(cid, user_name = ''):
     with session.no_autoflush:
         try:
             # Проверяем, существует ли уже пользователь с таким именем
-            existing_user = session.query(Users).filter_by(telegram_id=cid.lower()).first()
+            existing_user = session.query(Users).filter_by(telegram_id=cid).first()
 
             if existing_user:
                 return
 
             # Создаем нового пользователя
-            new_user = Users(telegram_id=cid.lower(), name=user_name.title())
+            new_user = Users(telegram_id=cid, name=user_name.title())
             session.add(new_user)
             session.flush()
 
@@ -173,6 +173,7 @@ def add_user(cid, user_name = None):
 
             # print(f"Пользователь '{cid.lower()}' успешно добавлен в систему!")
             return new_user
+
         except Exception as e:
             session.rollback()
             print(f'Ошибка {e}')
@@ -201,7 +202,7 @@ def random_target_word(cid):
                 random_word = random.choice(user_words)
                 return random_word
             else:
-                print("Нет слов в словаре пользователя.")
+                print(f"Нет слов в словаре пользователя {cid}")
                 return None
         except Exception as e:
             session.rollback()
@@ -455,3 +456,6 @@ def get_user_word_count(cid):
         except Exception as e:
             session.rollback()
             print(f'Ошибка {e}')
+
+# create_tables(engine)
+# insert_data(russian_words)

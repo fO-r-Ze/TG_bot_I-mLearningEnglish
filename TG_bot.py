@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 
+
 from psql_config import *
 from common_config import load_data_from_file
 
@@ -28,7 +29,7 @@ from common_config import load_data_from_file
 """
 
 # Работа бота начинается с единоразового выполнения функций:
-# - по созданию БД (create_tables(engine))
+# - по созданию БД (create_tables(engine)
 # - наполнению БД тестовыми данными insert_data(russian_words)
 
 token_TG = load_data_from_file('token_TG.txt')

@@ -29,3 +29,6 @@
 2025-10-23 14:01:57 | INFO     | {"ACTION": "delete_word", "DETAILS": {"RESULT": "deleted", "USER": 1122387206, "WORD": "Барсук"}}
 2025-10-23 14:08:11 | INFO     | {"ACTION": "add_word", "DETAILS": {"RESULT": "added_existing", "USER": 1122387206, "WORD": "Барсук"}}
 2025-10-23 14:08:18 | INFO     | {"ACTION": "delete_word", "DETAILS": {"RESULT": "deleted", "USER": 1122387206, "WORD": "Барсук"}}
+2025-10-23 14:58:19 | INFO     | {"ACTION": "create_user", "DETAILS": {"RESULT": "created", "USER": 1122387206, "WORDS_ADDED": 111}}
+2025-10-23 14:58:44 | INFO     | {"ACTION": "add_word", "DETAILS": {"RESULT": "added", "USER": 1122387206, "WORD": "Робот"}}
+2025-10-23 14:58:50 | INFO     | {"ACTION": "delete_word", "DETAILS": {"RESULT": "deleted", "USER": 1122387206, "WORD": "Барсук"}}
